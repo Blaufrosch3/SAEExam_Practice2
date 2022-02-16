@@ -12,12 +12,13 @@ public class DialogRunner : MonoBehaviour
     DialogueScriptable _scriptAsset;
 
     [SerializeField]
-    bool useTxt = false;
-
+    SceneLoader _textLoader;
+    [SerializeField]
+    bool _useTxt = false;
 
     private void Start()
     {
-        if (!useTxt)
+        if (!_useTxt)
         {
             //StartCoroutine(DialogRoutineTest());
 
@@ -27,12 +28,18 @@ public class DialogRunner : MonoBehaviour
                 _currentSequence = _scriptAsset.GetMyScript;
 
             _dialogDisplayer.LoadCharacterImages(_currentSequence.GetCharacter1Name, _currentSequence.GetCharacter2Name);
-            DisplayNextDialogue();
         }
         else
         {
-            //tbd
+            string text;
+
+            //for test: use index 5
+            text = _textLoader.GetSceneFromIndex(4);
+            //text = _textLoader.GetRandomScene();
+
+            _currentSequence = TextToSequenceConverter.ConvertFromText(text);
         }
+        DisplayNextDialogue();
     }
 
     private void DialogueTest()
@@ -102,7 +109,7 @@ public class DialogRunner : MonoBehaviour
         else if (_currentSequence != null && _currentSequence.Dialogue.Count == 0)
         {
             _dialogDisplayer.SetInterlocutor(Interlocutor.None);
-            _dialogDisplayer.SetText(""); 
+            _dialogDisplayer.SetText("");
         }
     }
 
@@ -140,7 +147,7 @@ public class DialogRunner : MonoBehaviour
 
     public void ContinueDialogue()
     {
-        Debug.Log("Continue pressed");
+        //Debug.Log("Continue pressed");
         DisplayNextDialogue();
     }
 }

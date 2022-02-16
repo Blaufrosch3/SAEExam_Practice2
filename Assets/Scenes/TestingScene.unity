@@ -779,6 +779,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8993774066084644388, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
+      propertyPath: _useTxt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993774066084644388, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
+      propertyPath: _textLoader
+      value: 
+      objectReference: {fileID: 1516145897}
+    - target: {fileID: 8993774066084644388, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
       propertyPath: _scriptAsset
       value: 
       objectReference: {fileID: 11400000, guid: b321e795b99df4c48a99e1bc33fea821, type: 2}
