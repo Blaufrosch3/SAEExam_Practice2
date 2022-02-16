@@ -25,7 +25,8 @@ public class DialogRunner : MonoBehaviour
                 DialogueTest();
             else
                 _currentSequence = _scriptAsset.GetMyScript;
-            
+
+            _dialogDisplayer.LoadCharacterImages(_currentSequence.GetCharacter1Name, _currentSequence.GetCharacter2Name);
             DisplayNextDialogue();
         }
         else

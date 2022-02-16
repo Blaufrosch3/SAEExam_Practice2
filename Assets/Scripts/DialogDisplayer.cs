@@ -14,7 +14,7 @@ public enum Interlocutor
 public class DialogDisplayer : MonoBehaviour
 {
     [SerializeField] TMPro.TMP_Text descriptionText, characterText, character1Name, character2Name;
-    [SerializeField] Image p1Image, p2Image;
+    [SerializeField] Image _p1Image, _p2Image;
 
     private Interlocutor interlocutor = (Interlocutor)(-1);
 
@@ -66,8 +66,8 @@ public class DialogDisplayer : MonoBehaviour
             case Interlocutor.None:
                 character1Name.enabled = false;
                 character2Name.enabled = false;
-                p1Image.enabled = false;
-                p2Image.enabled = false;
+                _p1Image.enabled = false;
+                _p2Image.enabled = false;
                 characterText.enabled = false;
                 descriptionText.enabled = true;
                 break;
@@ -75,8 +75,8 @@ public class DialogDisplayer : MonoBehaviour
             case Interlocutor.Character1:
                 character1Name.enabled = true;
                 character2Name.enabled = false;
-                p1Image.enabled = true;
-                p2Image.enabled = false;
+                _p1Image.enabled = true;
+                _p2Image.enabled = false;
                 characterText.enabled = true;
                 descriptionText.enabled = false;
                 break;
@@ -84,11 +84,27 @@ public class DialogDisplayer : MonoBehaviour
             case Interlocutor.Character2:
                 character1Name.enabled = false;
                 character2Name.enabled = true;
-                p1Image.enabled = false;
-                p2Image.enabled = true;
+                _p1Image.enabled = false;
+                _p2Image.enabled = true;
                 characterText.enabled = true;
                 descriptionText.enabled = false;
                 break;
+        }
+    }
+
+
+    [SerializeField]
+    LinkLibrary _imageLinks;
+
+    public void LoadCharacterImages(string char1, string char2)
+    {
+        if(_imageLinks != null)
+        {
+            if (!string.IsNullOrWhiteSpace(char1))
+                _p1Image.sprite = _imageLinks.TryGettingSprite(char1);
+
+            if (!string.IsNullOrWhiteSpace(char2))
+                _p2Image.sprite = _imageLinks.TryGettingSprite(char2);
         }
     }
 }
