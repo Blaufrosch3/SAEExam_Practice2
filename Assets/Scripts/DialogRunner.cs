@@ -40,5 +40,4 @@ public class DialogRunner : MonoBehaviour
         dialogDisplayer.SetInterlocutor(Interlocutor.None);
         dialogDisplayer.SetText("");
     }
-
 }
