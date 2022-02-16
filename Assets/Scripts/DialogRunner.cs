@@ -40,4 +40,9 @@ public class DialogRunner : MonoBehaviour
         dialogDisplayer.SetInterlocutor(Interlocutor.None);
         dialogDisplayer.SetText("");
     }
+
+    public void ContinueDialogue()
+    {
+        Debug.Log("Continue pressed");
+    }
 }
