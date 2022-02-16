@@ -8,11 +8,30 @@ public class DialogRunner : MonoBehaviour
 
     DialogueSequence _currentSequence;
 
+    [SerializeField, Tooltip("Leave empty to use test script")]
+    DialogueScriptable _scriptAsset;
+
+    [SerializeField]
+    bool useTxt = false;
+
+
     private void Start()
     {
-        //StartCoroutine(DialogRoutineTest());
-        //_dialogDisplayer.SetInterlocutor(Interlocutor.None);
-        DialogueTest();
+        if (!useTxt)
+        {
+            //StartCoroutine(DialogRoutineTest());
+
+            if (_scriptAsset == null)
+                DialogueTest();
+            else
+                _currentSequence = _scriptAsset.GetMyScript;
+            
+            DisplayNextDialogue();
+        }
+        else
+        {
+            //tbd
+        }
     }
 
     private void DialogueTest()
@@ -63,21 +82,26 @@ public class DialogRunner : MonoBehaviour
 
         _currentSequence = script;
 
-        Debug.Log("D: " +_currentSequence.Dialogue.Count);
+        //Debug.Log("D: " + _currentSequence.Dialogue.Count);
 
-        DisplayNextDialogue();
+        //DisplayNextDialogue();
     }
 
     private void DisplayNextDialogue()
     {
-        if(_currentSequence != null && _currentSequence.Dialogue.Count > 0)
+        if (_currentSequence != null && _currentSequence.Dialogue.Count > 0)
         {
             Dialogue c = _currentSequence.Dialogue.Dequeue();
             _dialogDisplayer.SetInterlocutor(c.CurrentInterlocutor);
             _dialogDisplayer.SetName(c.CharacterName);
             _dialogDisplayer.SetText(c.Text);
 
-            Debug.Log("D ch: " + _currentSequence.Dialogue.Count);
+            //Debug.Log("D ch: " + _currentSequence.Dialogue.Count);
+        }
+        else if (_currentSequence != null && _currentSequence.Dialogue.Count == 0)
+        {
+            _dialogDisplayer.SetInterlocutor(Interlocutor.None);
+            _dialogDisplayer.SetText(""); 
         }
     }
 

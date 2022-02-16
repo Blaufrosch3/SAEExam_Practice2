@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e132ca115dbe7459124ba93c035d6e, type: 3}
+  m_Name: script1
+  m_EditorClassIdentifier: 
+  _script:
+    SceneName: AssetTester
+  _dialogue:
+  - CharacterName: 
+    CurrentInterlocutor: 0
+    Text: There is a chill in the air.
+  - CharacterName: JOKER
+    CurrentInterlocutor: 1
+    Text: "It is freezing.\n\tMy tatas will fall off!"
+  - CharacterName: 
+    CurrentInterlocutor: 0
+    Text: Another character joins the room.
+  - CharacterName: 
+    CurrentInterlocutor: 0
+    Text: 'It is Batman!
+
+      His suit made out of rubber latex is beginning to
+      stiften due to the cold'
+  - CharacterName: 
+    CurrentInterlocutor: 0
+    Text: 'He looks quite unhappy and turns to his roommate the joker
+
+      His
+      face is displaying a range of negative emotions.'
+  - CharacterName: BATMAN
+    CurrentInterlocutor: 2
+    Text: 'Joker, don''t leave the fridge open everytime.
+
+      How often do i gotta
+      tell you that my hard nips actually break my suit when it hardens due to the
+      cold.'
+  - CharacterName: 
+    CurrentInterlocutor: 0
+    Text: FIN
