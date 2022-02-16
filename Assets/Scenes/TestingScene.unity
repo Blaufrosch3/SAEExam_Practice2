@@ -299,6 +299,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250219961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8993774066084644388, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
+  m_PrefabInstance: {fileID: 5189964757452882256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c003291770e38842ad55ca98fa5bf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1250219965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4835139167677110429, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
+  m_PrefabInstance: {fileID: 5189964757452882256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0743676b3571f4d8e5a734783b5a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395967694
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1421903411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1250219961}
+        m_TargetAssemblyTypeName: DialogRunner, Assembly-CSharp
+        m_MethodName: ContinueDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1421903411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,6 +744,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8993774066084644388, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
+      propertyPath: _dialogDisplayer
+      value: 
+      objectReference: {fileID: 1250219965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7339515f561d6f4b8f7b523d1a04cb0, type: 3}
 --- !u!224 &5189964757452882257 stripped

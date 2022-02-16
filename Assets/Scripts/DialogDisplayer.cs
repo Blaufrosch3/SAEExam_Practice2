@@ -19,7 +19,7 @@ public class DialogDisplayer : MonoBehaviour
     private Interlocutor interlocutor = (Interlocutor)(-1);
 
 
-    private void Start()
+    private void Awake()
     {
         SetInterlocutor(Interlocutor.None);
         SetText("");

@@ -1,9 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class DialogueSequence : MonoBehaviour
+[System.Serializable]
+public class DialogueSequence
 {
     public string SceneName;
-    public Queue<Dialogue> Dialogue;
+    public Queue<Dialogue> Dialogue = new Queue<Dialogue>();
+
+    public void AddDialogue(Dialogue d)
+    {
+        Dialogue.Enqueue(d);
+    }
 }
